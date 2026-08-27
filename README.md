@@ -1,0 +1,2 @@
+# linux-lamp-project
+lamp
