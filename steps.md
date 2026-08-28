@@ -279,7 +279,9 @@ linux-lamp-project/
 │   ├── edit.php
 │   ├── delete.php
 │   ├── db.php
-│   └── style.css
+│   ├── style.css
+│   ├── info.php
+│   └── db-test.php
 │
 ├── database/
 │   ├── database.sql
@@ -1130,6 +1132,8 @@ After verifying PHP, remove the file because `phpinfo()` exposes server configur
 sudo rm /var/www/html/info.php
 ```
 
+> A reference copy is kept at `website/info.php` in this repository for the portfolio, but it must never be deployed to a live server.
+
 ---
 
 # 21. Install MariaDB/MySQL
@@ -1678,6 +1682,8 @@ php -m | grep -i mysqli
 mysql -u webapp -p student_portal
 sudo tail -50 /var/log/httpd/error_log
 ```
+
+> A reference copy is kept at `website/db-test.php` in this repository for the portfolio; remove it from any live server once verified.
 
 ---
 
