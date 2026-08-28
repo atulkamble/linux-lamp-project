@@ -10,10 +10,10 @@ This project is designed for students who want to practice Linux commands in a r
 
 ## Enterprise Linux Web Server and Database Administration Project
 
-**Recommended Repository Name**
+**Repository**
 
 ```text
-enterprise-linux-web-database-project
+https://github.com/atulkamble/linux-lamp-project
 ```
 
 Alternative repository name:
@@ -232,7 +232,7 @@ Browser
 Create the following project structure:
 
 ```text
-enterprise-linux-web-database-project/
+linux-lamp-project/
 │
 ├── README.md
 │
@@ -270,12 +270,20 @@ enterprise-linux-web-database-project/
 └── screenshots/
 ```
 
-Create directories:
+Clone the repository (already contains this layout):
 
 ```bash
-mkdir enterprise-linux-web-database-project
+git clone https://github.com/atulkamble/linux-lamp-project.git
 
-cd enterprise-linux-web-database-project
+cd linux-lamp-project
+```
+
+Or create it from scratch:
+
+```bash
+mkdir linux-lamp-project
+
+cd linux-lamp-project
 
 mkdir website
 mkdir database
@@ -2786,7 +2794,7 @@ sudo crontab -e
 Add:
 
 ```cron
-0 1 * * * /home/ec2-user/enterprise-linux-web-database-project/scripts/backup_website.sh >> /var/log/website-backup.log 2>&1
+0 1 * * * /home/ec2-user/linux-lamp-project/scripts/backup_website.sh >> /var/log/website-backup.log 2>&1
 ```
 
 Runs:
@@ -2802,7 +2810,7 @@ Every day at 1:00 AM
 Add:
 
 ```cron
-0 2 * * * /home/ec2-user/enterprise-linux-web-database-project/scripts/backup_database.sh >> /var/log/database-backup.log 2>&1
+0 2 * * * /home/ec2-user/linux-lamp-project/scripts/backup_database.sh >> /var/log/database-backup.log 2>&1
 ```
 
 Runs:
@@ -3413,10 +3421,10 @@ Do not upload real secrets.
 
 # 81. Push to GitHub
 
-Create repository:
+Repository:
 
 ```text
-enterprise-linux-web-database-project
+linux-lamp-project
 ```
 
 Then:
@@ -3427,7 +3435,7 @@ git branch -M main
 
 ```bash
 git remote add origin \
-https://github.com/YOUR-USERNAME/enterprise-linux-web-database-project.git
+https://github.com/atulkamble/linux-lamp-project.git
 ```
 
 ```bash

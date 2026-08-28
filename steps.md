@@ -46,10 +46,10 @@ Database      : MariaDB/MySQL 3306 locally
 
 ## Enterprise Linux Web Server and Database Administration Project
 
-**Recommended Repository Name**
+**Repository**
 
 ```text
-enterprise-linux-web-database-project
+https://github.com/atulkamble/linux-lamp-project
 ```
 
 Alternative repository name:
@@ -268,7 +268,7 @@ Browser
 Create the following project structure:
 
 ```text
-enterprise-linux-web-database-project/
+linux-lamp-project/
 │
 ├── README.md
 │
@@ -306,12 +306,20 @@ enterprise-linux-web-database-project/
 └── screenshots/
 ```
 
-Create directories:
+Clone the repository (already contains this layout):
 
 ```bash
-mkdir enterprise-linux-web-database-project
+git clone https://github.com/atulkamble/linux-lamp-project.git
 
-cd enterprise-linux-web-database-project
+cd linux-lamp-project
+```
+
+Or create it from scratch:
+
+```bash
+mkdir linux-lamp-project
+
+cd linux-lamp-project
 
 mkdir website
 mkdir database
@@ -356,12 +364,12 @@ Storage         : 50 GB gp3 SSD
 
 ### EC2 Security Group
 
-| Type | Protocol | Port | Recommended Source | Purpose |
-|---|---|---:|---|---|
-| SSH | TCP | 22 | Your IP only | Remote administration |
-| HTTP | TCP | 80 | 0.0.0.0/0 | Web application |
-| HTTPS | TCP | 443 | 0.0.0.0/0 | Secure web traffic |
-| MySQL/MariaDB | TCP | 3306 | **Do not expose publicly** | Database traffic |
+| Type          | Protocol | Port | Recommended Source         | Purpose               |
+| ------------- | -------- | ---: | -------------------------- | --------------------- |
+| SSH           | TCP      |   22 | Your IP only               | Remote administration |
+| HTTP          | TCP      |   80 | 0.0.0.0/0                  | Web application       |
+| HTTPS         | TCP      |  443 | 0.0.0.0/0                  | Secure web traffic    |
+| MySQL/MariaDB | TCP      | 3306 | **Do not expose publicly** | Database traffic      |
 
 > In this single-server project, Apache/PHP and MariaDB run on the same EC2 instance. The PHP application connects using `localhost`, so inbound port **3306 is not required in the EC2 Security Group**. Open it only in a later two-server lab, and then allow it from the web-server Security Group rather than `0.0.0.0/0`.
 
@@ -3093,7 +3101,7 @@ sudo crontab -e
 Add:
 
 ```cron
-0 1 * * * /home/ec2-user/enterprise-linux-web-database-project/scripts/backup_website.sh >> /var/log/website-backup.log 2>&1
+0 1 * * * /home/ec2-user/linux-lamp-project/scripts/backup_website.sh >> /var/log/website-backup.log 2>&1
 ```
 
 Runs:
@@ -3109,7 +3117,7 @@ Every day at 1:00 AM
 Add:
 
 ```cron
-0 2 * * * /home/ec2-user/enterprise-linux-web-database-project/scripts/backup_database.sh >> /var/log/database-backup.log 2>&1
+0 2 * * * /home/ec2-user/linux-lamp-project/scripts/backup_database.sh >> /var/log/database-backup.log 2>&1
 ```
 
 Runs:
@@ -3720,10 +3728,10 @@ Do not upload real secrets.
 
 # 81. Push to GitHub
 
-Create repository:
+Repository:
 
 ```text
-enterprise-linux-web-database-project
+linux-lamp-project
 ```
 
 Then:
@@ -3734,7 +3742,7 @@ git branch -M main
 
 ```bash
 git remote add origin \
-https://github.com/YOUR-USERNAME/enterprise-linux-web-database-project.git
+https://github.com/atulkamble/linux-lamp-project.git
 ```
 
 ```bash
