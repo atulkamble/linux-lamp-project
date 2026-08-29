@@ -4505,3 +4505,25 @@ Git/GitHub
 ```
 
 That makes the project suitable for both **hands-on Linux training and a student GitHub/resume portfolio**.
+
+---
+
+# 93. More Info
+
+**GitHub Repository**
+
+```text
+https://github.com/atulkamble/linux-lamp-project
+```
+
+Clone it:
+
+```bash
+git clone https://github.com/atulkamble/linux-lamp-project.git
+```
+
+Report issues or suggest improvements via GitHub Issues on the repository above.
+
+**Author**: Atul Kamble
+
+**License**: [MIT](LICENSE)
